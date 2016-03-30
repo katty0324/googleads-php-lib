@@ -129,7 +129,7 @@ final class AdsServicesSoapClientFactory implements AdsSoapClientFactory {
             $soapSettings->getSslVerifyPeer();
       }
       if ($soapSettings->getSslVerifyHost() !== null) {
-        $contextOptions['ssl']['CN_match'] =
+        $contextOptions['ssl']['peer_name'] =
             parse_url($session->getEndpoint(), PHP_URL_HOST);
       }
       if ($soapSettings->getSslCaPath() !== null) {
